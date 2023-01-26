@@ -1,0 +1,214 @@
+let watchCircle = document.querySelector(".watchCircle");
+let watchImages = document.querySelectorAll(".watchCircle img");
+let angle = 210;
+let dangle = 360 / 6;
+for (const watchImage of watchImages) {
+  angle += dangle;
+  watchImage.style.transform = `rotate(${angle}deg) translate(${
+    watchCircle.clientWidth / 2
+  }px) rotate(-${angle}deg)`;
+}
+
+let toggle = document.querySelector(".toggle");
+let toggle1 = document.querySelector(".toggle1");
+let toggle2 = document.querySelector(".toggle2");
+let toggle3 = document.querySelector(".toggle3");
+let toggle4 = document.querySelector(".toggle4");
+
+const toggleWatchesImagesObj = {
+  watchCircle: "translate(-50%, -50%) rotate(0deg)",
+  watchTransition: "all 0.8s linear",
+  rotate: [
+    "rotate(270deg) translate(282px) rotate(-270deg)",
+    "rotate(330deg) translate(282px) rotate(-331deg)",
+    "rotate(390deg) translate(282px) rotate(-390deg)",
+    "rotate(450deg) translate(282px) rotate(-448deg)",
+    "rotate(510deg) translate(282px) rotate(-511deg)",
+    "rotate(570deg) translate(282px) rotate(-574deg)",
+  ],
+};
+const toggleWatchesImageObj1 = {
+  watchCircle: "translate(-50%, -50%) rotate(-60deg)  ",
+  watchTransition: "all 0.8s linear",
+  rotate: [
+    "rotate(270deg) translate(282px) rotate(-211deg)",
+    "rotate(330deg) translate(282px) rotate(-269deg)",
+    "rotate(390deg) translate(282px) rotate(-328deg)",
+    "rotate(450deg) translate(282px) rotate(-391deg)",
+    "rotate(510deg) translate(282px) rotate(-450deg)",
+    "rotate(570deg) translate(282px) rotate(-512deg)",
+  ],
+};
+const toggleWatchesImageObj2 = {
+  watchCircle: "translate(-50%, -50%) rotate(60deg)",
+  watchTransition: "all 0.8s linear",
+  rotate: [
+    "rotate(270deg) translate(282px) rotate(-332deg)",
+    "rotate(330deg) translate(282px) rotate(-392deg)",
+    "rotate(390deg) translate(282px) rotate(-450deg)",
+    "rotate(450deg) translate(282px) rotate(-513deg)",
+    "rotate(510deg) translate(282px) rotate(-570deg)",
+    "rotate(570deg) translate(282px) rotate(-630deg)",
+  ],
+};
+const toggleWatchesImageObj3 = {
+  watchCircle: "translate(-50%, -50%) rotate(180deg)",
+  watchTransition: "all 0.8s linear",
+  rotate: [
+    "rotate(270deg) translate(282px) rotate(-449deg)",
+    "rotate(330deg) translate(282px) rotate(-511deg)",
+    "rotate(390deg) translate(282px) rotate(-567deg)",
+    "rotate(450deg) translate(282px) rotate(-632deg)",
+    "rotate(510deg) translate(282px) rotate(-690deg)",
+    "rotate(570deg) translate(282px) rotate(-751deg)",
+  ],
+};
+const toggleWatchesImageObj4 = {
+  watchCircle: "translate(-50%, -50%) rotate(-120deg)",
+  watchTransition: "all 0.8s linear",
+  rotate: [
+    "rotate(270deg) translate(282px) rotate(-152deg)",
+    "rotate(330deg) translate(282px) rotate(-209deg)",
+    "rotate(390deg) translate(282px) rotate(-269deg)",
+    "rotate(450deg) translate(282px) rotate(-331deg)",
+    "rotate(510deg) translate(282px) rotate(-391deg)",
+    "rotate(570deg) translate(282px) rotate(-453deg)",
+  ],
+};
+
+// ******* Toggle addEventListener ******
+
+toggle.addEventListener("click", () =>
+  controlAnimation(
+    "/assets/img-lg-1.png",
+    "hsla(351, 72%, 55%,8%)",
+    "hsl(351, 72%, 55%)",
+    "toggle"
+  )
+);
+toggle1.addEventListener("click", () =>
+  controlAnimation(
+    "/assets/img-lg-4.png",
+    "hsla(230, 5%, 24%,8%)",
+    "hsl(230, 5%, 24%)",
+    "toggle1"
+  )
+);
+toggle2.addEventListener("click", () =>
+  controlAnimation(
+    "/assets/img-lg-2.png",
+    "hsla(214, 14%, 49%,8%)",
+    "hsl(214, 14%, 49%)",
+    "toggle2"
+  )
+);
+toggle3.addEventListener("click", () =>
+  controlAnimation(
+    "/assets/img-lg-3.png",
+    "hsl(0, 0%, 96%)",
+    "hsl(0, 0%, 90%)",
+    "toggle3"
+  )
+);
+toggle4.addEventListener("click", () =>
+  controlAnimation(
+    "/assets/img-lg-5.png",
+    "hsl(28, 21%, 82%)",
+    "hsl(27, 12%, 67%)",
+    "toggle4"
+  )
+);
+
+// ******* Toggle addEventListener ******
+// ******* Toggle Function ******
+
+function controlAnimation(img, color, textColor, toggle) {
+  const largeWatch = document.querySelector(".large-watch");
+  const toggleColors = document.querySelectorAll("section .colors li");
+  const circlePath = document.querySelector(".circle");
+  const awaits = document.querySelector(".awaits");
+  const learn = document.querySelector(".learn");
+  circlePath.style.backgroundColor = color;
+  awaits.style.color = textColor;
+  learn.style.color = textColor;
+  largeWatch.classList.remove("ani");
+
+  for (const watchImage of watchImages) {
+    watchImage.style.transition = "all 0.8s linear";
+  }
+  largeWatch.src = img;
+
+  setTimeout(() => {
+    largeWatch.classList.add("ani");
+    for (const watchImage of watchImages) {
+      watchImage.style.transition = "all 0.8s linear";
+    }
+    largeWatch.src = img;
+  }, 0);
+
+  // ***** toggle Colors ******
+  for (const toggleColor of toggleColors) {
+    toggleColor.classList.remove("active");
+    toggleColor.style.border = null;
+    toggleColor.style.borderColor = null;
+  }
+  setTimeout(() => {
+    for (const toggleColor of toggleColors) {
+      if (toggleColor.className === toggle) {
+        toggleColor.style.border = "1px solid red";
+        toggleColor.style.borderColor = textColor;
+      }
+    }
+  }, 0);
+  // ***** toggle Colors ******
+
+  // ******* toggle *****
+
+  switch (toggle) {
+    case "toggle":
+      for (const [index] of toggleWatchesImagesObj.rotate.entries()) {
+        watchImages[index].style.transform =
+          toggleWatchesImagesObj.rotate[index];
+      }
+      watchCircle.style.transform = toggleWatchesImagesObj.watchCircle;
+      watchCircle.style.transition = toggleWatchesImagesObj.watchTransition;
+      break;
+    case "toggle1":
+      for (const [index] of toggleWatchesImageObj1.rotate.entries()) {
+        watchImages[index].style.transform =
+          toggleWatchesImageObj1.rotate[index];
+      }
+      watchCircle.style.transform = toggleWatchesImageObj1.watchCircle;
+      watchCircle.style.transition = toggleWatchesImageObj1.watchTransition;
+      break;
+    case "toggle2":
+      for (const [index] of toggleWatchesImageObj2.rotate.entries()) {
+        watchImages[index].style.transform =
+          toggleWatchesImageObj2.rotate[index];
+      }
+      watchCircle.style.transform = toggleWatchesImageObj2.watchCircle;
+      watchCircle.style.transition = toggleWatchesImageObj2.watchTransition;
+      break;
+    case "toggle3":
+      for (const [index] of toggleWatchesImageObj3.rotate.entries()) {
+        watchImages[index].style.transform =
+          toggleWatchesImageObj3.rotate[index];
+      }
+      watchCircle.style.transform = toggleWatchesImageObj3.watchCircle;
+      watchCircle.style.transition = toggleWatchesImageObj3.watchTransition;
+      break;
+    case "toggle4":
+      for (const [index] of toggleWatchesImageObj4.rotate.entries()) {
+        watchImages[index].style.transform =
+          toggleWatchesImageObj4.rotate[index];
+      }
+      watchCircle.style.transform = toggleWatchesImageObj4.watchCircle;
+      watchCircle.style.transition = toggleWatchesImageObj4.watchTransition;
+      break;
+    default:
+      "";
+      break;
+  }
+}
+
+// ******* Toggle Function ******

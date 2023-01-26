@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+:root {
+  --clr-240-2-54: hsl(240, 2%, 54%);
+  --clr-230-5-24: hsl(230, 5%, 24%);
+  --clr-215-14-34: hsl(215, 14%, 34%);
+  --clr-0-0-100: hsl(0, 0%, 100%);
+  --clr-212-81-50: hsl(212, 81%, 50%);
+  --clr-351-72-55: hsl(351, 72%, 55%);
+  --clr-28-21-82: hsl(28, 21%, 82%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+section .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-351-72-55-8);
+  clip-path: circle(72% at center -29%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchCircle {
+  position: absolute;
+  top: 76%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 564px;
+  height: 564px;
+  background-image: url(/assets/circle-watch.svg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.watchCircle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(-126px / 2);
+  border-radius: 50%;
+}
+
+section header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2px 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-240-2-54);
+}
+
+section header div {
+  display: flex;
+  align-items: center;
+}
+section header div img {
+  margin-right: 10px;
+}
+section header div p {
+  color: var(--clr-0-0-100);
+}
+
+section header div button {
+  padding: 4px 20px;
+  border: none;
+  outline: none;
+  background-color: var(--clr-212-81-50);
+  color: var(--clr-0-0-100);
+  font-size: 13px;
+  border-radius: 17px;
+}
+
+section header div img:nth-child(2) {
+  margin-inline: 20px;
+}
+
+section .intro {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 17px;
+}
+
+section .intro p:nth-child(1) {
+  font-size: 20px;
+  color: var(--clr-215-14-34);
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-align: center;
+}
+section .intro p:nth-child(2) {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bold;
+  font-size: 53px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+section .intro .awaits {
+  color: var(--clr-351-72-55);
+  transform: translateY(-10%);
+}
+section .intro a {
+  text-decoration: none;
+  color: var(--clr-351-72-55);
+  font-size: 18px;
+  text-align: center;
+}
+
+section .large-watch {
+  position: absolute;
+  top: 74%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+section .colors {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  gap: 10px;
+}
+
+section .colors li {
+  list-style: none;
+  padding: 4px;
+  border-radius: 17px;
+  cursor: pointer;
+}
+.active {
+  border: 1px solid var(--clr-351-72-55);
+}
+
+section .colors li div {
+  width: 35px;
+  height: 35px;
+  background: var(--background);
+  border-radius: 10px;
+}
+
+/* ********** animation *****  */
+.ani {
+  animation: fade 0.8s ease-in-out 0s 1 alternate;
+}
+/* ******** keyframes *********** */
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-160deg) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+  }
+}
