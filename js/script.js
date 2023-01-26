@@ -1,3 +1,5 @@
+feather.replace();
+
 let watchCircle = document.querySelector(".watchCircle");
 let watchImages = document.querySelectorAll(".watchCircle img");
 let angle = 210;
@@ -15,6 +17,7 @@ let toggle2 = document.querySelector(".toggle2");
 let toggle3 = document.querySelector(".toggle3");
 let toggle4 = document.querySelector(".toggle4");
 let toggle5 = document.querySelector(".toggle5");
+let x = window.matchMedia("(max-width: 640px)");
 
 const toggleWatchesImagesObj = {
   watchCircle: "translate(-50%, -50%) rotate(0deg)",
@@ -182,6 +185,9 @@ function controlAnimation(img, color, textColor, toggle) {
     for (const toggleColor of toggleColors) {
       if (toggleColor.className === toggle) {
         toggleColor.style.border = "1px solid red";
+        if (x.matches) {
+          toggleColor.style.borderRadius = "13px";
+        }
         toggleColor.style.borderColor = textColor;
       }
     }
