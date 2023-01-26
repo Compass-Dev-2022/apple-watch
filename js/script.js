@@ -179,12 +179,14 @@ function controlAnimation(img, color, textColor, toggle) {
     toggleColor.classList.remove("active");
     toggleColor.style.border = null;
     toggleColor.style.borderColor = null;
+    toggleColor.style.pointerEvents = null;
   }
 
   setTimeout(() => {
     for (const toggleColor of toggleColors) {
       if (toggleColor.className === toggle) {
         toggleColor.style.border = "1px solid red";
+        toggleColor.style.pointerEvents = "none";
         if (x.matches) {
           toggleColor.style.borderRadius = "13px";
         }
