@@ -93,7 +93,7 @@ const toggleWatchesImageObj5 = {
 
 toggle.addEventListener("click", () =>
   controlAnimation(
-    "/assets/img-lg-1.png",
+    "/assets/img-lg-1.svg",
     "hsla(351, 72%, 55%,8%)",
     "hsl(351, 72%, 55%)",
     "toggle"
@@ -101,7 +101,7 @@ toggle.addEventListener("click", () =>
 );
 toggle1.addEventListener("click", () =>
   controlAnimation(
-    "/assets/img-lg-2.png",
+    "/assets/img-lg-2.svg",
     "hsla(230, 5%, 24%,8%)",
     "hsl(230, 5%, 24%)",
     "toggle1"
@@ -109,7 +109,7 @@ toggle1.addEventListener("click", () =>
 );
 toggle2.addEventListener("click", () =>
   controlAnimation(
-    "/assets/img-lg-3.png",
+    "/assets/img-lg-3.svg",
     "hsla(214, 14%, 49%,8%)",
     "hsl(214, 14%, 49%)",
     "toggle2"
@@ -117,7 +117,7 @@ toggle2.addEventListener("click", () =>
 );
 toggle3.addEventListener("click", () =>
   controlAnimation(
-    "/assets/img-lg-4.png",
+    "/assets/img-lg-4.svg",
     "hsl(0, 0%, 96%)",
     "hsl(0, 0%, 90%)",
     "toggle3"
@@ -125,7 +125,7 @@ toggle3.addEventListener("click", () =>
 );
 toggle4.addEventListener("click", () =>
   controlAnimation(
-    "/assets/img-lg-5.png",
+    "/assets/img-lg-5.svg",
     "hsl(28, 21%, 82%)",
     "hsl(27, 12%, 67%)",
     "toggle4"
@@ -133,7 +133,7 @@ toggle4.addEventListener("click", () =>
 );
 toggle5.addEventListener("click", () =>
   controlAnimation(
-    "/assets/img-lg-6.png",
+    "/assets/img-lg-6.svg",
     "hsl(32, 100%, 95%)",
     "hsl(32, 45%, 50%)",
     "toggle5"
