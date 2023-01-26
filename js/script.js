@@ -152,6 +152,7 @@ function controlAnimation(img, color, textColor, toggle) {
   circlePath.style.backgroundColor = color;
   learn.style.color = textColor;
   largeWatch.classList.remove("ani");
+  awaits.classList.remove("slide-top");
 
   for (const watchImage of watchImages) {
     watchImage.style.transition = "all 0.8s linear";
@@ -160,6 +161,9 @@ function controlAnimation(img, color, textColor, toggle) {
 
   setTimeout(() => {
     largeWatch.classList.add("ani");
+    awaits.classList.add("slide-top");
+
+    awaits.style.color = textColor;
 
     for (const watchImage of watchImages) {
       watchImage.style.transition = "all 0.8s linear";
