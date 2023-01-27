@@ -134,7 +134,7 @@ section .intro .intro-text p span {
   font-weight: bold;
   font-size: 53px;
   letter-spacing: 2px;
-  text-align:center;
+  text-align: center;
 }
 .intro-wrapper {
   display: flex;
@@ -237,7 +237,7 @@ section .colors li div {
 @media (max-width: 640px) {
   section header {
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
   section header div img {
     margin-right: 6px;
@@ -258,7 +258,7 @@ section .colors li div {
   }
   section .intro {
     top: 20%;
-    gap: 20px;
+    gap: 10px;
   }
   section .intro p:nth-child(1) {
     letter-spacing: 1px;
@@ -274,7 +274,7 @@ section .colors li div {
     clip-path: circle(72% at center 7%);
   }
   section .watchCircle {
-    top: 60%;
+    top: 65%;
     min-width: 310px;
     height: 310px;
   }
@@ -285,7 +285,7 @@ section .colors li div {
     margin: calc(-81px / 2);
   }
   section .large-watch {
-    top: 62%;
+    top: 65%;
     max-width: 180px;
     height: 180px;
   }
