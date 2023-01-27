@@ -103,6 +103,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       toggleColor.style.pointerEvents = null;
     }
     toggleColors[0].style.border = "1px solid hsl(351, 72%, 55%)";
+    awaits.style.color = "hsl(351, 72%, 55%)";
     largeWatch.src = "/assets/img-lg-1.svg";
   } else {
     watchCircle.style.transform = toggleWatchesImagesObj.watchCircle;
@@ -114,6 +115,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       toggleColor.style.pointerEvents = null;
     }
     toggleColors[0].style.border = "1px solid hsl(351, 72%, 55%)";
+    awaits.style.color = "hsl(351, 72%, 55%)";
     toggleColors[0].style.pointerEvents = "none";
     largeWatch.src = "/assets/img-lg-1.svg";
   }
