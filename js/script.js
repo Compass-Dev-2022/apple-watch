@@ -9,6 +9,11 @@ let toggle4 = document.querySelector(".toggle4");
 let toggle5 = document.querySelector(".toggle5");
 let watchCircle = document.querySelector(".watchCircle");
 let watchImages = document.querySelectorAll(".watchCircle img");
+let largeWatch = document.querySelector(".large-watch");
+let toggleColors = document.querySelectorAll("section .colors li");
+let circlePath = document.querySelector(".circle");
+let awaits = document.querySelector(".awaits");
+let learn = document.querySelector(".learn");
 let angle = 210;
 let dangle = 360 / 6;
 
@@ -88,11 +93,36 @@ let resize_ob = new ResizeObserver(function (entries) {
     ],
   };
 
+  if (width > 310) {
+    watchCircle.style.transform = toggleWatchesImagesObj.watchCircle;
+    watchCircle.style.transition = toggleWatchesImagesObj.watchTransition;
+    for (const toggleColor of toggleColors) {
+      toggleColor.classList.remove("active");
+      toggleColor.style.border = null;
+      toggleColor.style.borderColor = null;
+      toggleColor.style.pointerEvents = null;
+    }
+    toggleColors[0].style.border = "1px solid hsl(351, 72%, 55%)";
+    largeWatch.src = "/assets/img-lg-1.svg";
+  } else {
+    watchCircle.style.transform = toggleWatchesImagesObj.watchCircle;
+    watchCircle.style.transition = toggleWatchesImagesObj.watchTransition;
+    for (const toggleColor of toggleColors) {
+      toggleColor.classList.remove("active");
+      toggleColor.style.border = null;
+      toggleColor.style.borderColor = null;
+      toggleColor.style.pointerEvents = null;
+    }
+    toggleColors[0].style.border = "1px solid hsl(351, 72%, 55%)";
+    toggleColors[0].style.pointerEvents = "none";
+    largeWatch.src = "/assets/img-lg-1.svg";
+  }
   for (const [index] of watchImages.entries()) {
     watchImages[
       index
     ].style.transform = `${toggleWatchesImagesObj.rotate[index]}`;
   }
+
   // ******* Toggle addEventListener ******
 
   toggle.addEventListener("click", () =>
@@ -103,6 +133,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       "toggle"
     )
   );
+
   toggle1.addEventListener("click", () =>
     controlAnimation(
       "/assets/img-lg-2.svg",
@@ -111,6 +142,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       "toggle1"
     )
   );
+
   toggle2.addEventListener("click", () =>
     controlAnimation(
       "/assets/img-lg-3.svg",
@@ -119,6 +151,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       "toggle2"
     )
   );
+
   toggle3.addEventListener("click", () =>
     controlAnimation(
       "/assets/img-lg-4.svg",
@@ -127,6 +160,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       "toggle3"
     )
   );
+
   toggle4.addEventListener("click", () =>
     controlAnimation(
       "/assets/img-lg-5.svg",
@@ -135,6 +169,7 @@ let resize_ob = new ResizeObserver(function (entries) {
       "toggle4"
     )
   );
+
   toggle5.addEventListener("click", () =>
     controlAnimation(
       "/assets/img-lg-6.svg",
@@ -148,11 +183,6 @@ let resize_ob = new ResizeObserver(function (entries) {
   // ******* Toggle Function ******
 
   function controlAnimation(img, color, textColor, toggle) {
-    const largeWatch = document.querySelector(".large-watch");
-    const toggleColors = document.querySelectorAll("section .colors li");
-    const circlePath = document.querySelector(".circle");
-    const awaits = document.querySelector(".awaits");
-    const learn = document.querySelector(".learn");
     circlePath.style.backgroundColor = color;
     learn.style.color = textColor;
     largeWatch.classList.remove("ani");

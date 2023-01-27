@@ -79,9 +79,11 @@ section header div {
   display: flex;
   align-items: center;
 }
+
 section header div img {
   margin-right: 10px;
 }
+
 section header div p {
   color: var(--clr-0-0-100);
 }
@@ -128,6 +130,7 @@ section .intro p:nth-child(1) {
   letter-spacing: 3px;
   text-align: center;
 }
+
 section .intro .intro-text p,
 section .intro .intro-text p span {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -136,14 +139,17 @@ section .intro .intro-text p span {
   letter-spacing: 2px;
   text-align: center;
 }
+
 .intro-wrapper {
   display: flex;
   justify-content: center;
   gap: 0px 7px;
 }
+
 section .intro .awaits {
   color: var(--clr-351-72-55);
 }
+
 section .intro a {
   text-decoration: none;
   color: var(--clr-351-72-55);
@@ -175,6 +181,7 @@ section .colors li {
   border-radius: 17px;
   cursor: pointer;
 }
+
 .active {
   border: 1px solid var(--clr-351-72-55);
 }
@@ -190,9 +197,10 @@ section .colors li div {
 .ani {
   animation: fade 0.8s ease-in-out 0s 1 alternate;
 }
+
 .slide-top {
-  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: scrollUp 4s ease-in-out backwards;
+  animation: scrollUp 2s ease-in-out backwards;
 }
 /* ******** keyframes *********** */
 @keyframes fade {
@@ -207,7 +215,7 @@ section .colors li div {
   }
 }
 
-@-webkit-keyframes slide-top {
+@-webkit-keyframes scrollUp {
   0% {
     -webkit-transform: translateY(-40px);
     opacity: 0;
@@ -219,11 +227,12 @@ section .colors li div {
     transform: translateY(0);
   }
 }
-@keyframes slide-top {
+
+@keyframes scrollUp {
   0% {
+    -webkit-transform: translateY(-40px);
     opacity: 0;
-    -webkit-transform: translateY(40px);
-    transform: translateY(40px);
+    transform: translateY(-40px);
   }
   100% {
     opacity: 1;
@@ -239,9 +248,11 @@ section .colors li div {
     width: 100%;
     padding: 10px 10px;
   }
+
   section header div img {
     margin-right: 6px;
   }
+
   section header div p {
     color: var(--clr-0-0-100);
     font-size: 14px;
@@ -256,14 +267,17 @@ section .colors li div {
     padding: 6px 16px;
     font-size: 12px;
   }
+
   section .intro {
     top: 20%;
     gap: 10px;
   }
+
   section .intro p:nth-child(1) {
     letter-spacing: 1px;
     font-size: 16px;
   }
+
   section .intro .intro-text p,
   section .intro .intro-text span {
     font-size: 32.7px;
@@ -273,6 +287,7 @@ section .colors li div {
   section .circle {
     clip-path: circle(72% at center 7%);
   }
+
   section .watchCircle {
     top: 65%;
     min-width: 310px;
@@ -284,6 +299,7 @@ section .colors li div {
     height: 75px;
     margin: calc(-81px / 2);
   }
+
   section .large-watch {
     top: 65%;
     max-width: 180px;
@@ -298,10 +314,12 @@ section .colors li div {
     width: 134px;
     height: 67px;
   }
+
   section .colors li {
     border-radius: 12px;
     padding: 3px;
   }
+
   section .colors li div {
     width: 28px;
     height: 28px;
@@ -309,12 +327,27 @@ section .colors li div {
   }
 
   /* ***** keyframes ***** */
-  @keyframes slide-top {
+  @-webkit-keyframes scrollUp {
     0% {
-      -webkit-transform: translateY(20px);
-      transform: translateY(20px);
+      -webkit-transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
     }
     100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scrollUp {
+    0% {
+      -webkit-transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
       -webkit-transform: translateY(0);
       transform: translateY(0);
     }
