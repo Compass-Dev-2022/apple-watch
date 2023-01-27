@@ -1,3 +1,2 @@
-UI/UX = Ko Khant (Barray)
-Coding
-ZinMinHtun (Wine Chanz)
+UI/UX - Ko Khant (Barry)
+Coding - Wine Chanz
