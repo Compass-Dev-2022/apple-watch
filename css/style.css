@@ -9,7 +9,6 @@
   --clr-351-72-55: hsl(351, 72%, 55%);
   --clr-28-21-82: hsl(28, 21%, 82%);
   --clr-351-72-55-8: hsla(351, 72%, 55%, 8%);
-  color: hsla(0, 0%, 21%, 80%);
 }
 
 * {
@@ -47,11 +46,12 @@ section .circle {
   top: 76%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 564px;
+  min-width: 564px;
   height: 564px;
   background-image: url(/assets/circle-watch.svg);
   background-repeat: no-repeat;
-  object-fit: cover;
+  background-position: center center;
+  background-size: cover;
   border-radius: 50%;
 }
 
@@ -101,7 +101,7 @@ section header div .feather-shopping-bag {
   width: 18px;
   height: 18px;
 
-  stroke: #fff;
+  stroke: var(--clr-240-2-54);
   margin-left: 20px;
 }
 
@@ -118,7 +118,7 @@ section .intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0px;
+  gap: 20px;
 }
 
 section .intro p:nth-child(1) {
@@ -134,6 +134,7 @@ section .intro .intro-text p span {
   font-weight: bold;
   font-size: 53px;
   letter-spacing: 2px;
+  text-align:center;
 }
 .intro-wrapper {
   display: flex;
@@ -209,19 +210,23 @@ section .colors li div {
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(-40px);
+    opacity: 0;
     transform: translateY(-40px);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 @keyframes slide-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(40px);
     transform: translateY(40px);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -234,45 +239,72 @@ section .colors li div {
     width: 100%;
     padding: 10px 20px;
   }
+  section header div img {
+    margin-right: 6px;
+  }
+  section header div p {
+    color: var(--clr-0-0-100);
+    font-size: 14px;
+  }
+
   section header div .feather-search,
   section header div .feather-shopping-bag {
     margin-left: 8px;
   }
+
+  section header div button {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
   section .intro {
     top: 20%;
+    gap: 20px;
   }
   section .intro p:nth-child(1) {
     letter-spacing: 1px;
+    font-size: 16px;
   }
   section .intro .intro-text p,
   section .intro .intro-text span {
-    font-size: 34px;
+    font-size: 32.7px;
     letter-spacing: 1px;
   }
 
   section .circle {
-    clip-path: circle(72% at center 20%);
+    clip-path: circle(72% at center 7%);
   }
   section .watchCircle {
-    top: 87%;
+    top: 60%;
+    min-width: 310px;
+    height: 310px;
+  }
+
+  .watchCircle img {
+    max-width: 75px;
+    height: 75px;
+    margin: calc(-81px / 2);
   }
   section .large-watch {
-    top: 75%;
+    top: 62%;
+    max-width: 180px;
+    height: 180px;
   }
 
   section .colors {
     bottom: 2%;
-    left: 5%;
-    width: 100px;
-    gap: 3px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 10px;
+    width: 134px;
+    height: 67px;
   }
   section .colors li {
     border-radius: 12px;
     padding: 3px;
   }
   section .colors li div {
-    width: 21px;
-    height: 21px;
+    width: 28px;
+    height: 28px;
     border-radius: 7px;
   }
 
